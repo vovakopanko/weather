@@ -1,8 +1,10 @@
 import { applyMiddleware, combineReducers, createStore, compose } from "redux";
 import thunkMiddleware from "redux-thunk";
 import { reducer as formReducer } from "redux-form";
+import SearchReducer from "./SearchReducer";
 
 let reducers = combineReducers({
+  searchPage: SearchReducer,
   form: formReducer,
 });
 
