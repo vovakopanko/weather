@@ -12,6 +12,7 @@ import { NavLink, Route } from "react-router-dom";
 import { Clock } from "./Clock/Clock";
 import SearchContainer from "./Search/SearchContainer";
 import InfoSearch from "./InfoSearch/InfoSearch";
+import YourWeatherContainer from "./YourWeather/YourWeatherContainer";
 
 const { Header, Sider, Content } = Layout;
 
@@ -38,13 +39,13 @@ class App extends React.Component {
               <Menu.Item key="1" icon={<HomeOutlined />}>
                 <NavLink to="/search">Search your weather:</NavLink>
               </Menu.Item>
-              <Menu.Item key="3" icon={<CloudServerOutlined />}>
+              <Menu.Item key="2" icon={<CloudServerOutlined />}>
                 <NavLink to="/infosearch">How to search:</NavLink>
               </Menu.Item>
             </Menu>
           </Sider>
           <Layout className="site-layout">
-            <Header className="site-layout-background" style={{ padding: 0 , height: "0px" }}>
+            <Header className="site-layout-background" style={{ padding: 0 , height: "20px" }}>
               {React.createElement(
                 this.state.collapsed ? ArrowRightOutlined : ArrowLeftOutlined,
                 {
@@ -63,6 +64,7 @@ class App extends React.Component {
             >
               <Route exact path="/search" render={() => <SearchContainer/>} />
               <Route exact path="/infosearch" render={() => <InfoSearch />} />
+              <Route exact path="/yourweather" render={() => <YourWeatherContainer />} />
             </Content>
           </Layout>
         </Layout>

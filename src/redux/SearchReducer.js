@@ -5,7 +5,7 @@ const GET_YOURCITY = "redux/YourCityReducer/GET_YOURCITY";
 const SET_WEATHERDATA = "redux/YourCityReducer/SET_WEATHERDATA"
 
 let initialState = {
-  yourCity: "Minsk",
+  yourCity: null,
   weatherData: [],
 };
 
