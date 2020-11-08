@@ -3,6 +3,7 @@ import style from "./Search.module.css";
 import { Input } from "antd";
 import { NavLink } from "react-router-dom";
 import { Row, Col, Divider } from 'antd';
+// import { Field, reduxForm } from "redux-form";
 
 let Search = (props) => {
   const { Search } = Input;
@@ -11,8 +12,15 @@ let Search = (props) => {
     props.getInfoYourCity(value);
     props.getWeatherData(value);
   };
+
+  // const onSearchCity = (value) => {
+  //   alert(value.NewCityWeather);
+  //   props.getInfoYourCity(value.NewCityWeather);
+  //   props.getWeatherData(value.NewCityWeather);
+  // }
   return (
     <div>
+      {/* <SearchInfoData onSubmit={onSearchCity}/> */}
       <Search
           placeholder="Search your City/Town"
           enterButton="Search"
@@ -117,5 +125,23 @@ let Search = (props) => {
     </div>
   );
 };
+
+// const SearchInfoCity = (props) => {
+//   return (
+//       <form onSubmit={props.handleSubmit}>
+//           <Field
+//             placeholder="Search your City/Town ..."
+//             component={"input"}
+//             name={"NewCityWeather"}
+//           />
+//           <NavLink to="yourweather">
+//           <button>Hi</button>
+//           </NavLink>
+//       </form>
+//   );
+// };
+
+// const SearchInfoData = reduxForm({form: "getCityInformation"})(SearchInfoCity);
+
 
 export default Search;
