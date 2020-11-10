@@ -8,7 +8,6 @@ let YourWeather = ({ weatherData, yourCity }) => {
       <Row gutter={24}>
         <Col span={8}></Col>
         <Col className={style.border} span={8}>
-          Hello
           <div>
             {yourCity} [{weatherData.sys.country}]
           </div>
@@ -36,10 +35,12 @@ let YourWeather = ({ weatherData, yourCity }) => {
           </div>
           <div></div>
           <div>
-            Temp Maximal: <b>{Math.round(weatherData.main.temp_max - 273)} °C</b>{" "}
+            Temp Maximal:{" "}
+            <b>{Math.round(weatherData.main.temp_max - 273)} °C</b>{" "}
           </div>
           <div>
-            Temp Minimal: <b>{Math.round(weatherData.main.temp_min - 273)} °C</b>
+            Temp Minimal:{" "}
+            <b>{Math.round(weatherData.main.temp_min - 273)} °C</b>
           </div>
           <div>
             Description: <b>{weatherData.weather[0].description}</b>
