@@ -5,7 +5,7 @@ const SET_WEATHERDATA = "redux/YourCityReducer/SET_WEATHERDATA";
 const TOGGLE_IS_FETCHING = "redux/YourCityReducer/TOGGLE_IS_FETCHING";
 
 let initialState = {
-  yourCity: null,
+  yourCity: "Minsk",
   weatherData: [],
   isFeching: false,
 };
@@ -50,6 +50,7 @@ export const toggleIsFetching = (isFeching) => ({
 export const getWeatherData = (yourCity) => {
   return async (dispatch) => {
     dispatch(toggleIsFetching(true));
+    dispatch(getInfoYourCity(yourCity))
     let list = await weatherInfo.getWeatherInfo(yourCity);
     dispatch(setWeatherData(list));
     dispatch(toggleIsFetching(false));
