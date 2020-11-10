@@ -35,56 +35,56 @@ let Search = (props) => {
           </div>
           <NavLink
             className={style.link}
-            to="yourweather"
+            to="/yourweather"
             onClick={() => onSearch("Minsk")}
           >
             <div className="cityname">Minsk</div>
           </NavLink>
           <NavLink
             className={style.link}
-            to="yourweather"
+            to="/yourweather"
             onClick={() => onSearch("Vitebsk")}
           >
             <div>Vitebsk</div>
           </NavLink>
           <NavLink
             className={style.link}
-            to="yourweather"
+            to="/yourweather"
             onClick={() => onSearch("Gomel")}
           >
             <div>Gomel</div>
           </NavLink>
           <NavLink
             className={style.link}
-            to="yourweather"
+            to="/yourweather"
             onClick={() => onSearch("Grodno")}
           >
             <div>Grodno</div>
           </NavLink>
           <NavLink
             className={style.link}
-            to="yourweather"
+            to="/yourweather"
             onClick={() => onSearch("Brest")}
           >
             <div>Brest</div>
           </NavLink>
           <NavLink
             className={style.link}
-            to="yourweather"
+            to="/yourweather"
             onClick={() => onSearch("Navapolatsk")}
           >
             <div>Navapolatsk</div>
           </NavLink>
           <NavLink
             className={style.link}
-            to="yourweather"
+            to="/yourweather"
             onClick={() => onSearch("Polatsk")}
           >
             <div>Polatsk</div>
           </NavLink>
           <NavLink
             className={style.link}
-            to="yourweather"
+            to="/yourweather"
             onClick={() => onSearch("Polatsk")}
           >
             <div>Dzisna</div>
@@ -96,7 +96,7 @@ let Search = (props) => {
           </div>
           <NavLink
             className={style.link}
-            to="yourweather"
+            to="/yourweather"
             onClick={() => onSearch("Kiev")}
           >
             <div className="cityname">Kiev</div>
@@ -108,14 +108,14 @@ let Search = (props) => {
           </div>
           <NavLink
             className={style.link}
-            to="yourweather"
+            to="/yourweather"
             onClick={() => onSearch("Moscow")}
           >
             <div className="cityname">Moscow</div>
           </NavLink>
           <NavLink
             className={style.link}
-            to="yourweather"
+            to="/yourweather"
             onClick={() => onSearch("Sochi")}
           >
             <div>Sochi</div>
