@@ -12,3 +12,12 @@ export const weatherInfo = {
       .then((Response) => Response.data.list[0]);
   },
 };
+
+export const weatherInfoOnFiveDays = {
+  getWeatherInfo(city) {
+    return instance
+      .get(`forecast?q=` + city + `&lang=ru&units=metric&APPID=f004c51d2159432ab3fe79f60c84e90e`)
+      .then((Response) => Response.data.list);
+  },
+};
+

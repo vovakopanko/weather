@@ -4,13 +4,19 @@ const GET_YOURCITY = "redux/YourCityReducer/GET_YOURCITY";
 const SET_WEATHERDATA = "redux/YourCityReducer/SET_WEATHERDATA";
 const TOGGLE_IS_FETCHING = "redux/YourCityReducer/TOGGLE_IS_FETCHING";
 
-let initialState = {
+type initialStateType = {
+  yourCity: string | null;
+  weatherData: Array<any> | null;
+  isFeching: boolean | null;
+};
+
+let initialState: initialStateType = {
   yourCity: "Minsk",
   weatherData: [],
   isFeching: false,
 };
 
-const SearchReducer = (state = initialState, action) => {
+const SearchReducer = (state = initialState, action: any):initialStateType => {
   switch (action.type) {
     case GET_YOURCITY:
       return {
@@ -32,25 +38,40 @@ const SearchReducer = (state = initialState, action) => {
   }
 };
 
-export const getInfoYourCity = (yourCity) => ({
+type GetInfoYourCityType = {
+  type: typeof GET_YOURCITY;
+  yourCity: string;
+};
+
+export const getInfoYourCity = (yourCity: string): GetInfoYourCityType => ({
   type: GET_YOURCITY,
   yourCity,
 });
 
-export const setWeatherData = (data) => ({
+type SetWeatherDataType = {
+  type: typeof SET_WEATHERDATA;
+  data: any;
+};
+
+export const setWeatherData = (data: any): SetWeatherDataType => ({
   type: SET_WEATHERDATA,
   data,
 });
 
-export const toggleIsFetching = (isFeching) => ({
+type ToggleIsFetchingType = {
+  type: typeof TOGGLE_IS_FETCHING;
+  isFeching: boolean;
+};
+
+export const toggleIsFetching = (isFeching: boolean): ToggleIsFetchingType => ({
   type: TOGGLE_IS_FETCHING,
   isFeching,
 });
 
-export const getWeatherData = (yourCity) => {
-  return async (dispatch) => {
+export const getWeatherData = (yourCity: string) => {
+  return async (dispatch: any) => {
     dispatch(toggleIsFetching(true));
-    dispatch(getInfoYourCity(yourCity))
+    dispatch(getInfoYourCity(yourCity));
     let list = await weatherInfo.getWeatherInfo(yourCity);
     dispatch(setWeatherData(list));
     dispatch(toggleIsFetching(false));
